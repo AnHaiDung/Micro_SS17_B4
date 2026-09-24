@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cache-stampede-protection-service
+  cache:
+    type: caffeine
+    cache-names:
+      - flash-sale
+      - flash-sale-nosync
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    root: INFO
+    com.demo: INFO
+    org.springframework.cache: DEBUG

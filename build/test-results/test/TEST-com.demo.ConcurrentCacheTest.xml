@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.demo.ConcurrentCacheTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-24T12:50:53.133Z" hostname="LAPTOP-62K93AF7" time="7.487">
+  <properties/>
+  <testcase name="Kiểm thử đối chứng: 50 request đồng thời KHÔNG CÓ sync = true (Minh họa hiện tượng Cache Stampede)" classname="com.demo.ConcurrentCacheTest" time="3.249"/>
+  <testcase name="Kiểm thử 50 request đồng thời với sync = true: Chỉ có DUY NHẤT 1 lần truy xuất DB (Chống Cache Stampede)" classname="com.demo.ConcurrentCacheTest" time="2.072"/>
+  <system-out><![CDATA[19:50:53.307 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.demo.ConcurrentCacheTest]: ConcurrentCacheTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:50:53.449 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.demo.Application for test class com.demo.ConcurrentCacheTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-09-24 19:50:53.976 [Test worker] INFO  com.demo.ConcurrentCacheTest - Starting ConcurrentCacheTest using Java 23.0.2 with PID 20608 (started by Admin in C:\Microservice\SS17_B4)
+2026-09-24 19:50:53.977 [Test worker] INFO  com.demo.ConcurrentCacheTest - No active profile set, falling back to 1 default profile: "default"
+2026-09-24 19:50:55.273 [Test worker] INFO  com.demo.ConcurrentCacheTest - Started ConcurrentCacheTest in 1.641 seconds (process running for 2.954)
+2026-09-24 19:50:56.458 [Test worker] INFO  c.d.service.impl.ProductServiceImpl - Cleared all entries in flash-sale and flash-sale-nosync caches
+2026-09-24 19:50:56.461 [Test worker] INFO  com.demo.ConcurrentCacheTest - ================================================================================
+2026-09-24 19:50:56.462 [Test worker] INFO  com.demo.ConcurrentCacheTest - BẮT ĐẦU TEST ĐỐI CHỨNG: GỬI 50 REQUEST ĐỒNG THỜI KHÔNG CÓ SYNC (SYNC = FALSE)
+2026-09-24 19:50:56.464 [Test worker] INFO  com.demo.ConcurrentCacheTest - ================================================================================
+2026-09-24 19:50:56.500 [pool-1-thread-15] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-28] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.501 [pool-1-thread-23] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.501 [pool-1-thread-25] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-17] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-4] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.501 [pool-1-thread-43] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-22] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-45] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-39] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-24] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-19] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-16] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-37] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-36] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-13] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-48] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-18] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-7] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.503 [pool-1-thread-29] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-31] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-27] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-49] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-47] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.500 [pool-1-thread-3] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.501 [pool-1-thread-40] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.501 [pool-1-thread-32] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.501 [pool-1-thread-46] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.501 [pool-1-thread-30] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.501 [pool-1-thread-21] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-8] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-20] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-6] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-38] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-10] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-41] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-34] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-9] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-11] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-50] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-44] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-2] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-14] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.503 [pool-1-thread-1] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.502 [pool-1-thread-33] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.503 [pool-1-thread-5] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.503 [pool-1-thread-35] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.503 [pool-1-thread-12] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.503 [pool-1-thread-42] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:56.503 [pool-1-thread-26] WARN  c.d.service.impl.ProductServiceImpl - [NO-SYNC / CACHE STAMPEDE] Fetching from Database for product 1
+2026-09-24 19:50:58.515 [Test worker] INFO  com.demo.ConcurrentCacheTest - ================================================================================
+2026-09-24 19:50:58.515 [Test worker] INFO  com.demo.ConcurrentCacheTest - KẾT QUẢ ĐỐI CHỨNG (KHÔNG CÓ SYNC):
+2026-09-24 19:50:58.515 [Test worker] INFO  com.demo.ConcurrentCacheTest - - Tổng thời gian: 2050 ms
+2026-09-24 19:50:58.517 [Test worker] INFO  com.demo.ConcurrentCacheTest - ================================================================================
+2026-09-24 19:50:58.550 [Test worker] INFO  c.d.service.impl.ProductServiceImpl - Cleared all entries in flash-sale and flash-sale-nosync caches
+2026-09-24 19:50:58.554 [Test worker] INFO  com.demo.ConcurrentCacheTest - ================================================================================
+2026-09-24 19:50:58.555 [Test worker] INFO  com.demo.ConcurrentCacheTest - BẮT ĐẦU TEST: GỬI 50 REQUEST ĐỒNG THỜI VỚI SYNC = TRUE
+2026-09-24 19:50:58.555 [Test worker] INFO  com.demo.ConcurrentCacheTest - ================================================================================
+2026-09-24 19:50:58.605 [pool-2-thread-4] INFO  c.d.service.impl.ProductServiceImpl - Fetching from Database for product 1
+2026-09-24 19:51:00.610 [Test worker] INFO  com.demo.ConcurrentCacheTest - ================================================================================
+2026-09-24 19:51:00.611 [Test worker] INFO  com.demo.ConcurrentCacheTest - KẾT QUẢ KIỂM THỬ:
+2026-09-24 19:51:00.611 [Test worker] INFO  com.demo.ConcurrentCacheTest - - Tổng số request: 50
+2026-09-24 19:51:00.611 [Test worker] INFO  com.demo.ConcurrentCacheTest - - Số lần thực tế gọi xuống Database: 1
+2026-09-24 19:51:00.611 [Test worker] INFO  com.demo.ConcurrentCacheTest - - Tổng thời gian thực thi: 2052 ms
+2026-09-24 19:51:00.611 [Test worker] INFO  com.demo.ConcurrentCacheTest - ================================================================================
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Admin\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.19\154da3a65b4f4a909d3e5bdec55d1b2b4cbb6ce1\byte-buddy-agent-1.14.19.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
